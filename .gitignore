@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Environments and secrets
+.venv/
+.env
+.env.*
+!.env.example
+
+# Logs and local outputs
+logs/
+*.log
+reports/*.html
+reports/*.pdf
+experiments/*
+!experiments/.gitkeep
+data/raw/*
+data/interim/*
+data/processed/*
+data/features/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

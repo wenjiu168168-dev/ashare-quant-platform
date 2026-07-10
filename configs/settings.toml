@@ -1,0 +1,12 @@
+[app]
+name = "A-Share Quant Research Platform"
+environment = "development"
+
+[logging]
+level = "INFO"
+console_enabled = true
+file_enabled = true
+log_dir = "logs"
+log_file = "ashare_quant.log"
+max_bytes = 1048576
+backup_count = 5
