@@ -54,9 +54,21 @@ A-Share Quant Research Platform 是面向中国 A 股市场的量化研究、回
 
 ## 当前阶段状态
 
-当前仓库进入 Phase 2：Data Foundation。本阶段先建立统一数据提供者接口、能力声明、健康检查、注册机制和数据治理边界；当前任务仍不接入真实数据源、不下载股票数据、不使用 API Token、不连接券商、不开发策略、不编写 Dashboard。
+Phase 1（软件工程基础）已完成并通过 GitHub CI 验证。
 
-## 建议阅读顺序
+当前进入 Phase 2：Data Foundation。
+
+Task-2.1.1 已建立统一数据提供者接口（Provider Interface）、能力声明（Capability）、健康检查（Health）、注册机制（Registry）以及基础异常体系。
+
+当前阶段仍然：
+
+- 不接入真实数据源
+- 不下载股票数据
+- 不使用 API Token
+- 不连接券商
+- 不开发交易策略
+- 不生成买卖建议
+- 不开发 Dashboard
 
 1. `docs/PROJECT_CHARTER.md`
 2. `docs/RISK_PRINCIPLES.md`
