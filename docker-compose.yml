@@ -1,0 +1,9 @@
+services:
+  ashare-quant:
+    build: .
+    command: uv run pytest
+    volumes:
+      - .:/app
+    environment:
+      ASHARE_QUANT_CONFIG_FILE: configs/settings.toml
+      ASHARE_QUANT_ENV: development
