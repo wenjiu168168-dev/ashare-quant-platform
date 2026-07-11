@@ -1,6 +1,7 @@
-"""A-Share Quant Research Platform package."""
+"""A-Share Quant Research Platform package.
 
-from ashare_quant.config.settings import AppSettings, get_settings
-from ashare_quant.utils.exceptions import AShareQuantError
+Package initialization is intentionally lightweight. Import concrete modules directly,
+for example ``ashare_quant.config.settings`` or ``ashare_quant.utils.logging``.
+"""
 
-__all__ = ["AShareQuantError", "AppSettings", "get_settings"]
+__all__: list[str] = []

@@ -1,5 +1,6 @@
-"""Configuration helpers for A-Share Quant Research Platform."""
+"""Configuration package.
 
-from ashare_quant.config.settings import AppSettings, LoggingSettings, Settings, get_settings
+Import settings from ``ashare_quant.config.settings`` to avoid package-level side effects.
+"""
 
-__all__ = ["AppSettings", "LoggingSettings", "Settings", "get_settings"]
+__all__: list[str] = []
