@@ -54,9 +54,21 @@ A-Share Quant Research Platform 是面向中国 A 股市场的量化研究、回
 
 ## 当前阶段状态
 
-当前仓库处于 Phase 1：软件工程基础阶段。本阶段建立 Python 3.11、uv、ruff、pytest、mypy、pre-commit、GitHub Actions、Docker、统一配置、统一日志和统一异常处理基础；仍不开发策略、不下载股票数据、不连接券商、不接入 API、不编写 Dashboard。
+Phase 1（软件工程基础）已完成并通过 GitHub CI 验证。
 
-## 建议阅读顺序
+当前进入 Phase 2：Data Foundation。
+
+Task-2.1.1 已建立统一数据提供者接口（Provider Interface）、能力声明（Capability）、健康检查（Health）、注册机制（Registry）以及基础异常体系。
+
+当前阶段仍然：
+
+- 不接入真实数据源
+- 不下载股票数据
+- 不使用 API Token
+- 不连接券商
+- 不开发交易策略
+- 不生成买卖建议
+- 不开发 Dashboard
 
 1. `docs/PROJECT_CHARTER.md`
 2. `docs/RISK_PRINCIPLES.md`
@@ -92,3 +104,8 @@ make check
 - 配置：通过 `configs/settings.toml` 和 `pydantic-settings` 统一读取，禁止在业务模块中散落读取环境变量。
 - 日志：支持 console、file、rotating log 和不同日志等级。
 - 异常：统一项目异常基类，后续模块必须继承。
+
+
+## Phase 2 Data Foundation
+
+Task-2.1.1 建立统一数据提供者接口，详见 `docs/data/PROVIDER_INTERFACE.md`。该接口只定义 Provider 边界、能力声明、健康检查、生命周期和注册机制，不接入 Tushare、AkShare、JoinQuant、Wind 或任何真实行情数据源。
