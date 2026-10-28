@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="description" content="E0.1 纯合成数据只读网页原型。所有证券、情景及证据均为演示夹具，不构成投资建议。">
+    <title>决策审阅台 · E0.1 合成原型</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要内容</a>
+    <div class="workspace">
+      <aside class="sidebar" aria-label="工作台导航">
+        <a class="brand" href="#main" aria-label="AQR 决策审阅台首页"><span class="brand-mark" aria-hidden="true">A<span>Q</span></span><span>AQR<span class="brand-sub">RESEARCH WORKSPACE</span></span></a>
+        <div class="workspace-label">研究工作区 <span>01</span></div>
+        <nav class="navigation" aria-label="页面章节">
+          <a class="nav-link" href="#review"><span class="nav-number">01</span>决策审阅<span class="nav-arrow" aria-hidden="true">↗</span></a>
+          <a class="nav-link" href="#contract"><span class="nav-number">02</span>数据与溯源</a>
+          <a class="nav-link" href="#scope"><span class="nav-number">03</span>授权边界</a>
+        </nav>
+        <div class="sidebar-note"><span class="eyebrow">CURRENT STAGE</span><strong>E0.1</strong><p>纯合成数据<br>只读网页原型</p><span class="sidebar-tag">SYNTHETIC ONLY</span></div>
+        <div class="sidebar-bottom"><span class="status-dot" aria-hidden="true"></span>本地审阅 · 无执行通道</div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar"><span>A-SHARE QUANT <span class="topbar-divider">/</span> 合成研究工作台</span><span class="topbar-right">E0.1 <span class="readonly-pill">只读原型</span></span></header>
+        <main id="main" tabindex="-1">
+          <section class="page-heading" aria-labelledby="page-title"><div><p class="eyebrow">DECISION REVIEW / SYNTHETIC PROTOTYPE</p><h1 id="page-title">决策审阅台<span class="title-dot">.</span></h1><p class="heading-description">先审阅证据与约束，再理解候选状态。</p></div><div class="review-stamp"><span class="stamp-symbol" aria-hidden="true">◇</span><span>固定情景审阅<strong>不生成实际投资决策</strong></span></div></section>
+
+          <div class="synthetic-notice" role="note"><span class="notice-label">合成演示</span><span><strong>SYNTHETIC_DEMO_DATA</strong> · 虚构证券与固定情景，非投资建议；无真实行情、模型、回测或交易。</span></div>
+          <section id="load-status" class="load-status" aria-live="polite" aria-atomic="true"><strong>正在校验本地合成夹具…</strong><p>仅加载本仓库中受版本控制的演示文件。</p></section>
+          <noscript><div class="load-status load-error"><strong>需要 JavaScript 读取本地演示夹具。</strong><p>当前没有渲染任何候选；请启用 JavaScript 并通过本地 HTTP 服务打开。</p></div></noscript>
+
+          <div id="validated-content" hidden>
+            <section class="snapshot-bar" aria-label="固定快照信息"><div><span class="meta-label">数据截面</span><strong id="snapshot-date"></strong></div><div><span class="meta-label">快照状态</span><strong id="snapshot-freshness"></strong></div><div><span class="meta-label">系统状态</span><strong id="snapshot-system"></strong></div><div class="snapshot-id"><span class="meta-label">快照标识</span><strong id="snapshot-id"></strong></div></section>
+
+            <section id="review" class="review-section" aria-labelledby="review-title">
+              <div class="section-heading"><div><p class="eyebrow">01 / REVIEW BOARD</p><h2 id="review-title">候选审阅<span id="candidate-count" class="count-label"></span></h2></div><div class="scenario-control"><label for="scenario-select">固定演示场景</label><select id="scenario-select" aria-describedby="scenario-help"></select></div></div>
+              <p id="scenario-help" class="scenario-help">切换仅展示预先编写的合成夹具，不重新计算、不生成信号。</p>
+              <div class="posture-panel"><div class="posture-icon" aria-hidden="true">⊣</div><div class="posture-content"><div class="posture-title"><strong id="posture-name"></strong><span id="posture-code" class="code-label"></span></div><p id="posture-reason"></p></div><div class="posture-permissions"><span><i class="permission-bar" aria-hidden="true"></i>新增风险关闭</span><span>合法降险需独立核验</span></div></div>
+              <p class="posture-footnote"><strong>NO_NEW_RISK ≠ 强制清仓。</strong>降险与退出仍受可卖数量、权限、T+1、停牌、价格限制及成交能力约束。</p>
+              <p class="posture-footnote execution-overview" role="note"><strong>残余执行风险：</strong>止损与退出意图不保证成交，跳空、停牌、滑点和冲击未评估。<strong>退出可行性 UNKNOWN：</strong>无真实可卖数量、权限或流动性信息。</p>
+              <div id="candidate-grid" class="candidate-grid" aria-live="polite" aria-label="合成候选列表"></div>
+            </section>
+
+            <section id="contract" class="secondary-section" aria-labelledby="contract-title"><div class="section-heading"><div><p class="eyebrow">02 / DATA & PROVENANCE</p><h2 id="contract-title">数据与溯源</h2></div><span class="section-side-note">固定文件 · 有限结构校验</span></div><div class="provenance-grid"><div class="provenance-card"><span class="meta-label">唯一数据来源</span><strong>本地合成夹具</strong><code>fixtures/decision-demo.json</code><p id="data-disclaimer"></p></div><div class="provenance-card"><span class="meta-label">合同与校验</span><strong id="contract-version"></strong><p>前端仅执行覆盖全部展示字段、枚举及边界条件的有限结构校验，合同测试按版本化 Schema 与语义约束校验。校验失败即停止候选渲染。</p></div><div class="provenance-card"><span class="meta-label">时间与结果语义</span><strong>UNKNOWN 保留未知</strong><p>生成时间不等于信号时间，信号时间不等于可成交时间；未验证的样本、价格、仓位及归因不补值。</p><span id="generated-at" class="small-mono"></span></div></div></section>
+
+            <section id="scope" class="secondary-section" aria-labelledby="scope-title"><div class="section-heading"><div><p class="eyebrow">03 / AUTHORIZATION BOUNDARY</p><h2 id="scope-title">授权边界</h2></div><span id="authorization-id" class="authorization-badge"></span></div><div class="scope-panel"><div><h3>E0.1 · 合成数据只读展示</h3><p>本页只用于审阅信息架构、状态表达与审计字段。所有交互均不产生订单、实盘建议或持仓变更。</p><dl class="authorization-dates"><div><dt>签发时间</dt><dd id="authorization-issued"></dd></div><div><dt>到期时间</dt><dd id="authorization-expires"></dd></div></dl><p class="authorization-context">此处展示登记快照，不以页面载入代替工程授权有效期门禁。</p></div><div class="scope-restrictions"><strong>保持关闭</strong><ul><li>DATA-4.1 继续暂停</li><li>真实数据、模型、回测及真实荐股</li><li>券商连接、模拟下单及交易</li><li>合并、部署及外部数据连接</li></ul></div></div><details class="registration-details"><summary>查看登记引用<span aria-hidden="true">＋</span></summary><dl id="registration-metadata" class="audit-dl"></dl></details></section>
+          </div>
+          <footer class="page-footer"><span>AQR / E0.1</span><p>合成演示 · 非投资建议 · 风险约束先于展示结论</p><span>READ ONLY</span></footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
