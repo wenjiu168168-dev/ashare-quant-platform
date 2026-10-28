@@ -1,0 +1,1322 @@
+{
+  "contract_version": "0.1",
+  "data_classification": "SYNTHETIC_DEMO_DATA",
+  "disclaimer": "纯合成数据 · 只读网页原型 · 非投资建议。所有证券、证据与行动状态均为虚构演示，不提供真实交易建议。",
+  "snapshot": {
+    "id": "SYN-SNAPSHOT-E01-V01",
+    "generated_at": "2026-10-28T07:11:04Z",
+    "data_as_of": "2026-10-28T07:11:04Z",
+    "timezone": "Asia/Singapore",
+    "freshness": "STATIC_SYNTHETIC_SNAPSHOT",
+    "system_status": "READ_ONLY_PROTOTYPE"
+  },
+  "authorization": {
+    "id": "AUTH-ENG-0002",
+    "content_hash": "e221e81ffae10410703569512060c3c6adb1e05078d0a64004f406c34be4fcc1",
+    "genesis_c1_commit": "b2a975e06aa0ac30061a880d7a4877a61fa7db5d",
+    "genesis_c2_commit": "4f988f01a57929756b4d2c6b0f678dfaf564dc19",
+    "issued_at": "2026-10-28T07:11:04Z",
+    "expires_at": "2026-11-04T07:11:04Z",
+    "engineering_scope": "E0.1_SYNTHETIC_DECISION_WEB_PROTOTYPE",
+    "data_4_1": "PAUSED_NOT_AUTHORIZED",
+    "read_only": true,
+    "live_data_authorized": false,
+    "models_authorized": false,
+    "backtesting_authorized": false,
+    "real_recommendations_authorized": false,
+    "merge_authorized": false,
+    "deployment_authorized": false,
+    "broker_access_authorized": false,
+    "trading_authorized": false,
+    "human_release_reference": "当前聊天直接人类指令：我认可C2及独立QA结果，解除E0.1开发暂停。仅解除本次 E0.1 暂停，不扩展 DATA-4.1、合并或部署权限；未虚构消息 ID。"
+  },
+  "display": {
+    "max_candidates": 3,
+    "default_scenario": "selective"
+  },
+  "scenarios": [
+    {
+      "id": "selective",
+      "label": "选择性研究",
+      "market_posture": "SELECTIVE",
+      "posture_reason": "人工设定的研究场景；只审查信息结构，不授予新增风险权限。",
+      "new_risk_allowed": false,
+      "risk_reduction_allowed": true,
+      "candidate_ids": [
+        "SYN-ALPHA",
+        "SYN-BETA",
+        "SYN-IOTA"
+      ]
+    },
+    {
+      "id": "no-new-risk",
+      "label": "不新增风险",
+      "market_posture": "NO_NEW_RISK",
+      "posture_reason": "今日不新增仓位。已有持仓仍按合法的降险、减仓或退出规则管理。这里只展示虚构状态，不执行交易。",
+      "new_risk_allowed": false,
+      "risk_reduction_allowed": true,
+      "candidate_ids": [
+        "SYN-DELTA",
+        "SYN-EPSILON",
+        "SYN-ZETA"
+      ]
+    },
+    {
+      "id": "blocked",
+      "label": "阻断情形",
+      "market_posture": "UNKNOWN",
+      "posture_reason": "混杂、窗口关闭与不可执行分别说明原因，不伪造缺失值。",
+      "new_risk_allowed": false,
+      "risk_reduction_allowed": true,
+      "candidate_ids": [
+        "SYN-GAMMA",
+        "SYN-ETA",
+        "SYN-THETA"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "SYN-ALPHA",
+      "code": "SYN-ALPHA",
+      "name": "虚构·晨岚材料",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "WAIT_TRIGGER",
+      "block_reason": "NONE",
+      "trigger_or_wait": "等待独立来源与首次可得时间补齐后，才能进入新的授权审查。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "虚构产品交付的叙事可被拆成可证伪问题。",
+        "strongest_counterevidence": "交付表述不等于收入确认，且没有可核验原始来源。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "等待业务证据补齐",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "虚构产品交付的叙事可被拆成可证伪问题。",
+        "why_fail": "交付表述不等于收入确认，且没有可核验原始来源。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-ALPHA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-BETA",
+      "code": "SYN-BETA",
+      "name": "虚构·泊川设备",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "OBSERVE",
+      "block_reason": "INSUFFICIENT_EVIDENCE",
+      "trigger_or_wait": "等待独立证据链完整；当前仅观察合成案例。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "演示证据不足如何阻止新增风险。",
+        "strongest_counterevidence": "当前没有可验证的业务暴露或经济重大性。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "证据不足，暂不新增风险。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "演示证据不足如何阻止新增风险。",
+        "why_fail": "当前没有可验证的业务暴露或经济重大性。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-BETA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-GAMMA",
+      "code": "SYN-GAMMA",
+      "name": "虚构·栖原科技",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "NO_TRADE",
+      "block_reason": "CONFOUNDED",
+      "trigger_or_wait": "先区分行业叙事、业务变化与其他替代解释。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "演示事件重叠时保留多个可证伪解释。",
+        "strongest_counterevidence": "同一现象可能由多个因素产生，无法认定因果。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "多项事件或解释相互重叠，当前无法可靠归因。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "演示事件重叠时保留多个可证伪解释。",
+        "why_fail": "同一现象可能由多个因素产生，无法认定因果。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-GAMMA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-DELTA",
+      "code": "SYN-DELTA",
+      "name": "虚构·澄屿制造",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "HOLD",
+      "block_reason": "NONE",
+      "trigger_or_wait": "仅展示虚构已有持仓的监控条件；没有账户或订单。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示不新增风险与持有状态可以并存。",
+        "strongest_counterevidence": "假说缺少验证，持有文字不能构成继续承担风险的真实建议。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "保留观察，不新增风险。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示不新增风险与持有状态可以并存。",
+        "why_fail": "假说缺少验证，持有文字不能构成继续承担风险的真实建议。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-DELTA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-EPSILON",
+      "code": "SYN-EPSILON",
+      "name": "虚构·折光系统",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "REDUCE",
+      "block_reason": "NONE",
+      "trigger_or_wait": "演示减仓审查；真实权限、可卖数量和执行条件均未知。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示降险行动与新增风险权限的分离。",
+        "strongest_counterevidence": "减仓可能无法成交，或产生预期以外的剩余敞口。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "合法降险仍须满足真实可卖与权限约束。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示降险行动与新增风险权限的分离。",
+        "why_fail": "减仓可能无法成交，或产生预期以外的剩余敞口。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-EPSILON",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-ZETA",
+      "code": "SYN-ZETA",
+      "name": "虚构·远汀服务",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "EXIT",
+      "block_reason": "NONE",
+      "trigger_or_wait": "仅展示防守退出审查；不创建或模拟任何订单。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示假说失效后的退出信息结构。",
+        "strongest_counterevidence": "退出意图不保证成交，T+1、停牌和流动性可能阻断。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "退出示意不等于已成交。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示假说失效后的退出信息结构。",
+        "why_fail": "退出意图不保证成交，T+1、停牌和流动性可能阻断。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-ZETA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-ETA",
+      "code": "SYN-ETA",
+      "name": "虚构·雾岭工研",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "NO_TRADE",
+      "block_reason": "WINDOW_CLOSED",
+      "trigger_or_wait": "仅演示窗口关闭的表达；没有计算价格、成本或信号。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示研究逻辑与可交易窗口的不同含义。",
+        "strongest_counterevidence": "没有真实价格和完整成本，窗口状态只是人工合成脚本。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "逻辑可能仍然成立，但成本后的交易窗口已经关闭。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示研究逻辑与可交易窗口的不同含义。",
+        "why_fail": "没有真实价格和完整成本，窗口状态只是人工合成脚本。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-ETA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-THETA",
+      "code": "SYN-THETA",
+      "name": "虚构·星屿组件",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "NO_TRADE",
+      "block_reason": "NON_EXECUTABLE",
+      "trigger_or_wait": "等待执行条件可核验；当前没有真实行情或可卖信息。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示执行可行性应先于行动表达。",
+        "strongest_counterevidence": "无法确认停牌、涨跌停、容量、滑点或退出流动性。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "当前无法在合理价格、流动性或退出条件下执行。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示执行可行性应先于行动表达。",
+        "why_fail": "无法确认停牌、涨跌停、容量、滑点或退出流动性。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-THETA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    },
+    {
+      "id": "SYN-IOTA",
+      "code": "SYN-IOTA",
+      "name": "虚构·知沐工程",
+      "data_classification": "SYNTHETIC_DEMO_DATA",
+      "action": "DECISION_REVIEW",
+      "block_reason": "NONE",
+      "trigger_or_wait": "待授权、证据、风险与执行门逐项核验；本原型不通过这些门。",
+      "earliest_execution": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "无真实证券、交易日历或可成交条件；不能生成最早可执行时间。"
+      },
+      "reference_price_area": {
+        "value": null,
+        "status": "UNKNOWN",
+        "reason": "未接入真实价格；本轮不生成价格区间。"
+      },
+      "risk_gate": {
+        "status": "BLOCKED_NEW_RISK",
+        "reason": "CEO 最终风险数值未批准；原型没有真实行动授权。",
+        "new_risk_allowed": false,
+        "risk_reduction_allowed": true
+      },
+      "maximum_candidate_position": {
+        "value": null,
+        "status": "CEO_RISK_MANDATE_PENDING",
+        "reason": "最大仓位、回撤、止损与止盈等最终风险数值尚未获 CEO 批准。"
+      },
+      "invalidation": "若业务假说、独立来源或执行条件不能被核验，研究判断即失效；这里未做实证验证。",
+      "exit_profit_management": {
+        "summary": "防守退出与延续参与须分别审查；不预设固定止盈、止损或仓位数字。",
+        "right_tail_status": "RESEARCH_ONLY",
+        "right_tail_reason": "Right-Tail 与部分兑现仅描述未来待验证问题；未设数值目标。"
+      },
+      "evidence": {
+        "grade": "SYNTHETIC_UNVALIDATED",
+        "strongest_support": "展示信息完备性审查入口，而不生成买入建议。",
+        "strongest_counterevidence": "合成证据没有样本外或经济验证，不能推出收益优势。"
+      },
+      "execution": {
+        "residual_risk": "止损与退出意图不保证成交；跳空、停牌、涨跌停、滑点和冲击均未评估。",
+        "exit_feasibility": {
+          "status": "UNKNOWN",
+          "reason": "没有真实可卖数量、授权、盘口、流动性或交易日历。"
+        },
+        "constraints": [
+          "T+1 与真实可卖状态未核验",
+          "停牌、涨跌停与退市状态未核验",
+          "佣金、税费、滑点、冲击和容量未估计"
+        ]
+      },
+      "no_trade_reason": "只进入信息审查，不获得交易权限。",
+      "unknown_reason": "全部叙事为人工编写的虚构脚本，不能用作真实研究、荐股或执行依据。",
+      "details": {
+        "why_research": "展示信息完备性审查入口，而不生成买入建议。",
+        "why_fail": "合成证据没有样本外或经济验证，不能推出收益优势。",
+        "alternatives": [
+          "行业层面的共同变化可能解释现象。",
+          "信息披露口径或时间错配可能解释现象。"
+        ],
+        "market_state": "人工设定场景；没有市场状态推断。",
+        "sentiment_state": "UNKNOWN：没有情绪数据或情绪模型。",
+        "portfolio_state": "虚构持有/降险场景；没有真实账户或组合。",
+        "capital_proxy": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "无资金数据或资金模型；公开代理不得解释成主体意图。"
+        },
+        "information_timeline": {
+          "first_public_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虚构材料没有真实首次公开时间。"
+          },
+          "available_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未接真实来源，无法建立 PIT 首次可得时间。"
+          },
+          "ingested_at": "2026-10-28T07:11:04Z",
+          "signal_generated_at": {
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原型不运行信号或模型，未产生信号时间。"
+          }
+        },
+        "expectation_gap": "UNKNOWN：没有价格、市场预期或经济验证，不能断言存在预期差。",
+        "business_exposure": "虚构业务叙事；公司收入、客户、合同和重大性均没有真实映射。",
+        "claims": [
+          {
+            "kind": "FACT",
+            "text": "演示事实：本记录由人工编写，代码与名称均为虚构。"
+          },
+          {
+            "kind": "INFERENCE",
+            "text": "演示推断：业务变化可能影响研究假说；未经验证。"
+          },
+          {
+            "kind": "HYPOTHESIS",
+            "text": "演示假设：独立证据若无法补齐，应否定该研究路径。"
+          }
+        ],
+        "monitoring": "监控证据新增、反证、假说失效和退出可行性；本原型不执行监控任务。",
+        "defensive_exit": "假说失效时先审查合法降险和真实可卖约束；不假设可以按止损价格成交。"
+      },
+      "audit": {
+        "source_id": "SYN-SOURCE-IOTA",
+        "source_description": "E0.1 人工合成脚本；不存在外部原始材料或真实公司映射。",
+        "first_public_at": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "虚构记录没有真实公开发布事件。"
+        },
+        "data_version": "SYN-FIXTURE-v0.1",
+        "rule_version": "CONTRACT-v0.1-DISPLAY-ONLY",
+        "model_version": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未实现模型、规则推断或信号生成。"
+        },
+        "validation_status": "SYNTHETIC_NOT_VALIDATED",
+        "support_path": [
+          "人工脚本 → 演示支持文字 → 首屏展示"
+        ],
+        "counterevidence_path": [
+          "人工脚本 → 替代解释与反证 → 首屏展示"
+        ],
+        "historical_samples": {
+          "value": null,
+          "status": "UNKNOWN",
+          "reason": "未接入历史样本，未运行回测或统计验证。"
+        },
+        "invalidation_status": "NOT_VALIDATED",
+        "snapshot_id": "SYN-SNAPSHOT-E01-V01",
+        "attribution_status": "NOT_VALIDATED"
+      }
+    }
+  ]
+}

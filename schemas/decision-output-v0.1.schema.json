@@ -1,0 +1,703 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ashare-quant-platform:decision-output:0.1",
+  "title": "Decision Output Contract v0.1 — synthetic E0.1 only",
+  "description": "Pure authored fixtures. No live decision engine or execution permission. The local subset validator also checks IDs, references and risk semantics; it is not a general JSON Schema implementation.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "data_classification",
+    "disclaimer",
+    "snapshot",
+    "authorization",
+    "display",
+    "scenarios",
+    "candidates"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "0.1"
+    },
+    "data_classification": {
+      "const": "SYNTHETIC_DEMO_DATA"
+    },
+    "disclaimer": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "snapshot": {
+      "type": "object",
+      "required": [
+        "id",
+        "generated_at",
+        "data_as_of",
+        "timezone",
+        "freshness",
+        "system_status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "data_as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "const": "Asia/Singapore"
+        },
+        "freshness": {
+          "const": "STATIC_SYNTHETIC_SNAPSHOT"
+        },
+        "system_status": {
+          "const": "READ_ONLY_PROTOTYPE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorization": {
+      "type": "object",
+      "required": [
+        "id",
+        "content_hash",
+        "genesis_c1_commit",
+        "genesis_c2_commit",
+        "issued_at",
+        "expires_at",
+        "engineering_scope",
+        "data_4_1",
+        "read_only",
+        "live_data_authorized",
+        "models_authorized",
+        "backtesting_authorized",
+        "real_recommendations_authorized",
+        "merge_authorized",
+        "deployment_authorized",
+        "broker_access_authorized",
+        "trading_authorized",
+        "human_release_reference"
+      ],
+      "properties": {
+        "id": {
+          "const": "AUTH-ENG-0002"
+        },
+        "content_hash": {
+          "const": "e221e81ffae10410703569512060c3c6adb1e05078d0a64004f406c34be4fcc1"
+        },
+        "genesis_c1_commit": {
+          "const": "b2a975e06aa0ac30061a880d7a4877a61fa7db5d"
+        },
+        "genesis_c2_commit": {
+          "const": "4f988f01a57929756b4d2c6b0f678dfaf564dc19"
+        },
+        "issued_at": {
+          "const": "2026-10-28T07:11:04Z"
+        },
+        "expires_at": {
+          "const": "2026-11-04T07:11:04Z"
+        },
+        "engineering_scope": {
+          "const": "E0.1_SYNTHETIC_DECISION_WEB_PROTOTYPE"
+        },
+        "data_4_1": {
+          "const": "PAUSED_NOT_AUTHORIZED"
+        },
+        "read_only": {
+          "const": true
+        },
+        "live_data_authorized": {
+          "const": false
+        },
+        "models_authorized": {
+          "const": false
+        },
+        "backtesting_authorized": {
+          "const": false
+        },
+        "real_recommendations_authorized": {
+          "const": false
+        },
+        "merge_authorized": {
+          "const": false
+        },
+        "deployment_authorized": {
+          "const": false
+        },
+        "broker_access_authorized": {
+          "const": false
+        },
+        "trading_authorized": {
+          "const": false
+        },
+        "human_release_reference": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Direct human instruction in current chat; no invented message ID.",
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    },
+    "display": {
+      "type": "object",
+      "required": [
+        "max_candidates",
+        "default_scenario"
+      ],
+      "properties": {
+        "max_candidates": {
+          "const": 3
+        },
+        "default_scenario": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scenario"
+      },
+      "minItems": 1
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "unknown": {
+      "type": "object",
+      "required": [
+        "value",
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "value": {
+          "const": null
+        },
+        "status": {
+          "const": "UNKNOWN"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pendingRisk": {
+      "type": "object",
+      "required": [
+        "value",
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "value": {
+          "const": null
+        },
+        "status": {
+          "const": "CEO_RISK_MANDATE_PENDING"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "id",
+        "label",
+        "market_posture",
+        "posture_reason",
+        "new_risk_allowed",
+        "risk_reduction_allowed",
+        "candidate_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "market_posture": {
+          "enum": [
+            "SELECTIVE",
+            "NO_NEW_RISK",
+            "UNKNOWN"
+          ]
+        },
+        "posture_reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "new_risk_allowed": {
+          "const": false
+        },
+        "risk_reduction_allowed": {
+          "const": true
+        },
+        "candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 1,
+          "maxItems": 3,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "code",
+        "name",
+        "data_classification",
+        "action",
+        "block_reason",
+        "trigger_or_wait",
+        "earliest_execution",
+        "reference_price_area",
+        "risk_gate",
+        "maximum_candidate_position",
+        "invalidation",
+        "exit_profit_management",
+        "evidence",
+        "execution",
+        "no_trade_reason",
+        "unknown_reason",
+        "details",
+        "audit"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^SYN-[A-Z]+$"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^SYN-[A-Z]+$"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^虚构·.+"
+        },
+        "data_classification": {
+          "const": "SYNTHETIC_DEMO_DATA"
+        },
+        "action": {
+          "enum": [
+            "OBSERVE",
+            "WAIT_TRIGGER",
+            "DECISION_REVIEW",
+            "HOLD",
+            "REDUCE",
+            "EXIT",
+            "NO_TRADE"
+          ]
+        },
+        "block_reason": {
+          "enum": [
+            "NONE",
+            "INSUFFICIENT_EVIDENCE",
+            "CONFOUNDED",
+            "WINDOW_CLOSED",
+            "NON_EXECUTABLE"
+          ]
+        },
+        "trigger_or_wait": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "earliest_execution": {
+          "$ref": "#/$defs/unknown"
+        },
+        "reference_price_area": {
+          "$ref": "#/$defs/unknown"
+        },
+        "risk_gate": {
+          "type": "object",
+          "required": [
+            "status",
+            "reason",
+            "new_risk_allowed",
+            "risk_reduction_allowed"
+          ],
+          "properties": {
+            "status": {
+              "const": "BLOCKED_NEW_RISK"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "new_risk_allowed": {
+              "const": false
+            },
+            "risk_reduction_allowed": {
+              "const": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "maximum_candidate_position": {
+          "$ref": "#/$defs/pendingRisk"
+        },
+        "invalidation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "exit_profit_management": {
+          "type": "object",
+          "required": [
+            "summary",
+            "right_tail_status",
+            "right_tail_reason"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "right_tail_status": {
+              "const": "RESEARCH_ONLY"
+            },
+            "right_tail_reason": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "required": [
+            "grade",
+            "strongest_support",
+            "strongest_counterevidence"
+          ],
+          "properties": {
+            "grade": {
+              "const": "SYNTHETIC_UNVALIDATED"
+            },
+            "strongest_support": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "strongest_counterevidence": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "additionalProperties": false
+        },
+        "execution": {
+          "type": "object",
+          "required": [
+            "residual_risk",
+            "exit_feasibility",
+            "constraints"
+          ],
+          "properties": {
+            "residual_risk": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "exit_feasibility": {
+              "type": "object",
+              "required": [
+                "status",
+                "reason"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "UNKNOWN",
+                    "CONDITIONAL_DEMO"
+                  ]
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "additionalProperties": false
+            },
+            "constraints": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "no_trade_reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "unknown_reason": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "details": {
+          "type": "object",
+          "required": [
+            "why_research",
+            "why_fail",
+            "alternatives",
+            "market_state",
+            "sentiment_state",
+            "portfolio_state",
+            "capital_proxy",
+            "information_timeline",
+            "expectation_gap",
+            "business_exposure",
+            "claims",
+            "monitoring",
+            "defensive_exit"
+          ],
+          "properties": {
+            "why_research": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "why_fail": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "alternatives": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 1
+            },
+            "market_state": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "sentiment_state": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "portfolio_state": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "capital_proxy": {
+              "$ref": "#/$defs/unknown"
+            },
+            "information_timeline": {
+              "type": "object",
+              "required": [
+                "first_public_at",
+                "available_at",
+                "ingested_at",
+                "signal_generated_at"
+              ],
+              "properties": {
+                "first_public_at": {
+                  "$ref": "#/$defs/unknown"
+                },
+                "available_at": {
+                  "$ref": "#/$defs/unknown"
+                },
+                "ingested_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "signal_generated_at": {
+                  "$ref": "#/$defs/unknown"
+                }
+              },
+              "additionalProperties": false
+            },
+            "expectation_gap": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "business_exposure": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "text"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "FACT",
+                      "INFERENCE",
+                      "HYPOTHESIS"
+                    ]
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "minItems": 1
+            },
+            "monitoring": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "defensive_exit": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "additionalProperties": false
+        },
+        "audit": {
+          "type": "object",
+          "required": [
+            "source_id",
+            "source_description",
+            "first_public_at",
+            "data_version",
+            "rule_version",
+            "model_version",
+            "validation_status",
+            "support_path",
+            "counterevidence_path",
+            "historical_samples",
+            "invalidation_status",
+            "snapshot_id",
+            "attribution_status"
+          ],
+          "properties": {
+            "source_id": {
+              "type": "string",
+              "pattern": "^SYN-SOURCE-[A-Z]+$"
+            },
+            "source_description": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "first_public_at": {
+              "$ref": "#/$defs/unknown"
+            },
+            "data_version": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "rule_version": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "model_version": {
+              "$ref": "#/$defs/unknown"
+            },
+            "validation_status": {
+              "const": "SYNTHETIC_NOT_VALIDATED"
+            },
+            "support_path": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 1
+            },
+            "counterevidence_path": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 1
+            },
+            "historical_samples": {
+              "$ref": "#/$defs/unknown"
+            },
+            "invalidation_status": {
+              "const": "NOT_VALIDATED"
+            },
+            "snapshot_id": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "attribution_status": {
+              "const": "NOT_VALIDATED"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
